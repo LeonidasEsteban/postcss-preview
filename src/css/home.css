@@ -63,6 +63,14 @@
 .logo {
   width: calc(100% - 100px);
   margin: 0 auto;
+  background-image: image-set(url('../../images/platzi-video.png') 1x,
+                              url('../../images/platzi-video-2x.png') 2x,
+                              url('../../images/platzi-video-3x.png') 100dpi
+                             ) ;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 40px;
 
 }
 .logo-image {
@@ -247,9 +255,49 @@
   margin: 10px;
 }
 
+@custom-media --extra-small (width < 480px);
+/*@custom-media --small (min-width: 480px);*/
+@custom-media --small (width < 768px);
+/*@custom-media --medium (min-width: 768px);*/
+@custom-media --medium screen and (width >= 768px);
+/*@custom-media --large (min-width: 1024px);*/
+@custom-media --large (width >= 1024px);
 
+
+/*@media (--small) {*/
 @media screen and (width <= 768px) {
+/*@media screen and (max-width : 768px) {*/
   body {
-    border: 1px solid red;
+    border: 10px solid blue;
+  }
+  .home {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 150px;
+    grid-template-areas: "primary"
+                         "sidebar"
+                         "featuring";
+  }
+  .featuring {
+    position: fixed;
+    bottom: 0;
+    height: 150px;
+    left: 0;
+    right: 0;
+  }
+  .sidebar {
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .logo {
+    grid-column: 1 / -1;
+    width: 200px;
+  }
+}
+
+@media (--extra-small) {
+  body {
+    border: 10px solid orange;
   }
 }

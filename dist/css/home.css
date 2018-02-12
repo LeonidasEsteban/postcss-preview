@@ -2,20 +2,15 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
 }
-:root{
-  --darkColor: #171b2f;
-  --lightColor: white;
-  --viewportHeight: 50vh;
-}
 .btn {
-  border: 1px solid var(--lightColor);
+  border: 1px solid white;
   border-radius: 5px;
-  background: var(--darkColor);
-  color: var(--lightColor);
+  background: #171b2f;
+  color: white;
   padding: .5em 2em;
   text-transform: uppercase;
   cursor: pointer;
-  border-bottom: 5px solid var(--lightColor);
+  border-bottom: 5px solid white;
 }
 .btn.warning {
   background: red;
@@ -60,18 +55,23 @@ body {
       grid-template-columns: 1fr;
   -ms-grid-rows: auto 1fr 1fr;
       grid-template-rows: auto 1fr 1fr;
-  background: var(--darkColor);
-  color: var(--lightColor);
+  background: #171b2f;
+  color: white;
   padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: calc(var(--viewportHeight) * 2);
+  height: 100vh;
   overflow: auto;
 }
 /*Logo*/
 .logo {
   width: calc(100% - 100px);
   margin: 0 auto;
+  background-image: url('../../images/platzi-video.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 40px;
 
 }
 .logo-image {
@@ -88,7 +88,7 @@ body {
   padding: 0 20px;
 }
 .myPlaylist-item a {
-  color: var(--lightColor);
+  color: white;
   text-decoration: none;
   font-size: .8em;
   display: block;
@@ -105,7 +105,7 @@ body {
   padding: 0;
 }
 .playlistFriends-item {
-  color: var(--lightColor);
+  color: white;
 }
 .playlistFriends-item {
   display: -webkit-box;
@@ -121,7 +121,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: var(--lightColor);
+  color: white;
   text-decoration: none;
 }
 .playlistFriends-item:hover a {
@@ -137,7 +137,7 @@ body {
   display: inline-block;
 }
 .home-primary {
-  background: var(--lightColor);
+  background: white;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "search user"
@@ -245,7 +245,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding-left: 100px;
-  color: var(--lightColor);
+  color: white;
 }
 .featuring-image {
   margin-right: 20px;
@@ -257,8 +257,58 @@ body {
   font-size: 1.3em;
   margin: 10px;
 }
+/*@custom-media --small (min-width: 480px);*/
+/*@custom-media --medium (min-width: 768px);*/
+/*@custom-media --large (min-width: 1024px);*/
+/*@media (--small) {*/
 @media screen and (max-width: 768px) {
+/*@media screen and (max-width : 768px) {*/
   body {
-    border: 1px solid red;
+    border: 10px solid blue;
   }
+  .home {
+    height: auto;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: auto auto 150px;
+        grid-template-rows: auto auto 150px;
+        grid-template-areas: "primary"
+                         "sidebar"
+                         "featuring";
+  }
+  .featuring {
+    position: fixed;
+    bottom: 0;
+    height: 150px;
+    left: 0;
+    right: 0;
+  }
+  .sidebar {
+    height: auto;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto 1fr;
+        grid-template-rows: auto 1fr;
+  }
+  .logo {
+    grid-column: 1 / -1;
+    width: 200px;
+  }
+}
+@media (max-width: 479px) {
+  body {
+    border: 10px solid orange;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.0416666666666667), (min-resolution: 100dpi) {
+.logo {
+  background-image: url('../../images/platzi-video-3x.png');
+
+}
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+.logo {
+  background-image: url('../../images/platzi-video-2x.png');
+
+}
 }

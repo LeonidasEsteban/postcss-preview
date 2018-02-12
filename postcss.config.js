@@ -16,8 +16,10 @@ module.exports = {
           autoprefixer: {
             grid: true,
           },
-          customProperties: false,
-          calc: false,
+          // customProperties: false,
+          // calc: false,
+          // customMedia: false,
+          // mediaQueriesRange: false,
         }
       }),
     ]
