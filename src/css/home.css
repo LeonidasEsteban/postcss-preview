@@ -17,6 +17,10 @@
 .btn {
   @apply --button;
 }
+
+.btn.warning {
+  background: red;
+}
 /* home layout */
 .home {
   background: red;

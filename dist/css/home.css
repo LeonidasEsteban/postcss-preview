@@ -2,15 +2,22 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
 }
+:root{
+  --darkColor: #171b2f;
+  --lightColor: white;
+}
 .btn {
-  border: 1px solid white;
+  border: 1px solid var(--lightColor);
   border-radius: 5px;
-  background: #171b2f;
-  color: white;
+  background: var(--darkColor);
+  color: var(--lightColor);
   padding: .5em 2em;
   text-transform: uppercase;
   cursor: pointer;
-  border-bottom: 5px solid white;
+  border-bottom: 5px solid var(--lightColor);
+}
+.btn.warning {
+  background: red;
 }
 /* home layout */
 .home {
@@ -52,8 +59,8 @@ body {
       grid-template-columns: 1fr;
   -ms-grid-rows: auto 1fr 1fr;
       grid-template-rows: auto 1fr 1fr;
-  background: #171b2f;
-  color: white;
+  background: var(--darkColor);
+  color: var(--lightColor);
   padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -78,7 +85,7 @@ body {
   padding: 0 20px;
 }
 .myPlaylist-item a {
-  color: white;
+  color: var(--lightColor);
   text-decoration: none;
   font-size: .8em;
   display: block;
@@ -95,7 +102,7 @@ body {
   padding: 0;
 }
 .playlistFriends-item {
-  color: white;
+  color: var(--lightColor);
 }
 .playlistFriends-item {
   display: -webkit-box;
@@ -111,7 +118,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: white;
+  color: var(--lightColor);
   text-decoration: none;
 }
 .playlistFriends-item:hover a {
@@ -127,7 +134,7 @@ body {
   display: inline-block;
 }
 .home-primary {
-  background: white;
+  background: var(--lightColor);
   display: -ms-grid;
   display: grid;
       grid-template-areas: "search user"
@@ -235,7 +242,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding-left: 100px;
-  color: white;
+  color: var(--lightColor);
 }
 .featuring-image {
   margin-right: 20px;

@@ -16,7 +16,7 @@ module.exports = {
           autoprefixer: {
             grid: true,
           },
-          // customProperties: false,
+          customProperties: false,
         }
       }),
     ]
