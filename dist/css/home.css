@@ -5,6 +5,7 @@ body {
 :root{
   --darkColor: #171b2f;
   --lightColor: white;
+  --viewportHeight: 50vh;
 }
 .btn {
   border: 1px solid var(--lightColor);
@@ -64,11 +65,13 @@ body {
   padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 100vh;
+  height: calc(var(--viewportHeight) * 2);
   overflow: auto;
 }
 /*Logo*/
 .logo {
+  width: calc(100% - 100px);
+  margin: 0 auto;
 
 }
 .logo-image {

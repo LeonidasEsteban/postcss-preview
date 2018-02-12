@@ -17,6 +17,7 @@ module.exports = {
             grid: true,
           },
           customProperties: false,
+          calc: false,
         }
       }),
     ]
