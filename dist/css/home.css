@@ -2,8 +2,19 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
 }
-/*home layout*/
+.btn {
+  border: 1px solid white;
+  border-radius: 5px;
+  background: #171b2f;
+  color: white;
+  padding: .5em 2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 5px solid white;
+}
+/* home layout */
 .home {
+  background: red;
   display: -ms-grid;
   display: grid;
   height: 100vh;
@@ -41,7 +52,7 @@ body {
       grid-template-columns: 1fr;
   -ms-grid-rows: auto 1fr 1fr;
       grid-template-rows: auto 1fr 1fr;
-  background: #15192a;
+  background: #171b2f;
   color: white;
   padding: 1em;
   -webkit-box-sizing: border-box;
@@ -116,6 +127,7 @@ body {
   display: inline-block;
 }
 .home-primary {
+  background: white;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "search user"

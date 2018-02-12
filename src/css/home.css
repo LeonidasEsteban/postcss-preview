@@ -1,6 +1,25 @@
 @import "./body.css";
-/*home layout*/
+:root{
+  --darkColor: #171b2f;
+  --lightColor: white;
+  --button: {
+    border: 1px solid var(--lightColor);
+    border-radius: 5px;
+    background: var(--darkColor);
+    color: var(--lightColor);
+    padding: .5em 2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-bottom: 5px solid var(--lightColor);
+  };
+}
+
+.btn {
+  @apply --button;
+}
+/* home layout */
 .home {
+  background: red;
   display: grid;
   height: 100vh;
   grid-template-columns: 350px 1fr;
@@ -27,8 +46,8 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 1fr;
-  background: #15192a;
-  color: white;
+  background: var(--darkColor);
+  color: var(--lightColor);
   padding: 1em;
   box-sizing: border-box;
   height: 100vh;
@@ -57,7 +76,7 @@
 }
 
 .myPlaylist-item a {
-  color: white;
+  color: var(--lightColor);
   text-decoration: none;
   font-size: .8em;
   display: block;
@@ -79,7 +98,7 @@
 }
 
 .playlistFriends-item {
-  color: white;
+  color: var(--lightColor);
 }
 
 .playlistFriends-item {
@@ -90,7 +109,7 @@
 .playlistFriends-item a {
   display: inline-flex;
   align-items: center;
-  color: white;
+  color: var(--lightColor);
   text-decoration: none;
 }
 .playlistFriends-item:hover a {
@@ -110,6 +129,7 @@
 
 
 .home-primary {
+  background: var(--lightColor);
   display: grid;
   grid-template-areas: "search user"
                        "list list";
@@ -205,7 +225,7 @@
   height: 100%;
   align-items: center;
   padding-left: 100px;
-  color: white;
+  color: var(--lightColor);
 }
 
 .featuring-image {
