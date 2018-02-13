@@ -24,7 +24,7 @@
 }
 /* home layout */
 .home {
-  background: red;
+  background: black;
   display: grid;
   height: 100vh;
   grid-template-columns: 350px 1fr;
@@ -48,15 +48,25 @@
 
 /*Sidebar*/
 .sidebar {
+  /*background: color(hsla(125, 50%, 50%, .4) saturation(+ 10%) w(- 20%));*/
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 1fr;
-  background: var(--darkColor);
+  /*background: var(--darkColor);*/
   color: var(--lightColor);
+  /*color: color([color | matiz], ajuste de color);*/
+  color: color(black a(50%) contrast(50%) );
+  /*background: hwb(hue, whiteness, blackness, opacidad);*/
+  /*background: hwb(tono | matiz, luz, sombra, opacidad);*/
+  background: hwb(320, 50%, 0%, 1);
+  /*background: hsl(260, 65%, 52%);*/
+  /*background: gray(0 - 255);*/
+  background: gray(50);
   padding: 1em;
   box-sizing: border-box;
   height: calc(var(--viewportHeight) * 2);
   overflow: auto;
+  all: initial;
 }
 
 /*Logo*/
