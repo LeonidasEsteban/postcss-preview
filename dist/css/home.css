@@ -1,6 +1,37 @@
+/*@import "./body.css";*/
 body {
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  /*font-family: 'Lato', sans-serif;*/
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+}
+/*.checkbox-label {*/
+.checkbox-label,
+.radio-label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  padding: 3px 7px;
+  border: 1px solid rgb(230, 4, 0);
+  border-bottom: 3px solid rgb(128, 2, 0);
+  background: rgb(255, 205, 204);
+  color: rgb(100, 100, 100);
+  font-size: 12px;
+  border-radius: 5px;
+}
+/* .checkbox-label:hover, .checkbox-label:active */
+.checkbox-label:hover,
+.radio-label:hover,
+.checkbox-label:active,
+.radio-label:active {
+  background: red;
+  color: white;
+}
+/*.checkbox:checked + .primaryPlaylist-list {*/
+.checkbox-label:checked + .primaryPlaylist-list,
+.radio-label:checked + .primaryPlaylist-list {
+  display: none;
 }
 .btn {
   border: 1px solid white;
@@ -71,111 +102,6 @@ body {
           box-sizing: border-box;
   height: 100vh;
   overflow: auto;
-  -webkit-animation: none 0s ease 0s 1 normal none running;
-          animation: none 0s ease 0s 1 normal none running;
-  -webkit-backface-visibility: visible;
-          backface-visibility: visible;
-  background: transparent none repeat 0 0 / auto auto padding-box border-box scroll;
-  border: medium none currentColor;
-  border-collapse: separate;
-  -o-border-image: none;
-     border-image: none;
-  border-radius: 0;
-  border-spacing: 0;
-  bottom: auto;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  caption-side: top;
-  clear: none;
-  clip: auto;
-  color: #000;
-  -webkit-columns: auto;
-          columns: auto;
-  -webkit-column-count: auto;
-          column-count: auto;
-  -webkit-column-fill: balance;
-          column-fill: balance;
-  -webkit-column-gap: normal;
-          column-gap: normal;
-  -webkit-column-rule: medium none currentColor;
-          column-rule: medium none currentColor;
-  -webkit-column-span: 1;
-          column-span: 1;
-  -webkit-column-width: auto;
-          column-width: auto;
-  content: normal;
-  counter-increment: none;
-  counter-reset: none;
-  cursor: auto;
-  direction: ltr;
-  display: inline;
-  empty-cells: show;
-  float: none;
-  font-family: serif;
-  font-size: medium;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: normal;
-  height: auto;
-  -webkit-hyphens: none;
-      -ms-hyphens: none;
-          hyphens: none;
-  left: auto;
-  letter-spacing: normal;
-  list-style: disc outside none;
-  margin: 0;
-  max-height: none;
-  max-width: none;
-  min-height: 0;
-  min-width: 0;
-  opacity: 1;
-  orphans: 2;
-  outline: medium none invert;
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  padding: 0;
-  page-break-after: auto;
-  page-break-before: auto;
-  page-break-inside: auto;
-  -webkit-perspective: none;
-          perspective: none;
-  -webkit-perspective-origin: 50% 50%;
-          perspective-origin: 50% 50%;
-  position: static;
-  right: auto;
-  -moz-tab-size: 8;
-    -o-tab-size: 8;
-       tab-size: 8;
-  table-layout: auto;
-  text-align: left;
-  text-align-last: auto;
-  text-decoration: none;
-  text-indent: 0;
-  text-shadow: none;
-  text-transform: none;
-  top: auto;
-  -webkit-transform: none;
-          transform: none;
-  -webkit-transform-origin: 50% 50% 0;
-          transform-origin: 50% 50% 0;
-  -webkit-transform-style: flat;
-          transform-style: flat;
-  -webkit-transition: none 0s ease 0s;
-  transition: none 0s ease 0s;
-  unicode-bidi: normal;
-  vertical-align: baseline;
-  visibility: visible;
-  white-space: normal;
-  widows: 2;
-  width: auto;
-  word-spacing: normal;
-  z-index: auto;
-  all: initial;
 }
 /*Logo*/
 .logo {

@@ -1,4 +1,10 @@
-@import "./body.css";
+/*@import "./body.css";*/
+body {
+  margin: 0;
+  /*font-family: 'Lato', sans-serif;*/
+  font-family: system-ui;
+}
+
 :root{
   --darkColor: #171b2f;
   --lightColor: white;
@@ -13,6 +19,32 @@
     cursor: pointer;
     border-bottom: 5px solid var(--lightColor);
   };
+}
+
+@custom-selector :--checkeable .checkbox-label, .radio-label;
+@custom-selector :--hightlight :hover, :active;
+
+/*.checkbox-label {*/
+:--checkeable {
+  user-select: none;
+  cursor: pointer;
+  padding: 3px 7px;
+  border: 1px solid color(#ff0400 b(10%));
+  border-bottom: 3px solid color(#ff0400 b(50%));
+  background: color(#ff0400 l(90%));
+  color: gray(100);
+  font-size: 12px;
+  border-radius: 5px;
+}
+/* .checkbox-label:hover, .checkbox-label:active */
+:--checkeable:--hightlight {
+  background: red;
+  color: white;
+}
+
+/*.checkbox:checked + .primaryPlaylist-list {*/
+:--checkeable:checked + .primaryPlaylist-list {
+  display: none;
 }
 
 .btn {
@@ -66,7 +98,6 @@
   box-sizing: border-box;
   height: calc(var(--viewportHeight) * 2);
   overflow: auto;
-  all: initial;
 }
 
 /*Logo*/
