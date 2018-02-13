@@ -19,6 +19,8 @@ body {
   color: rgb(100, 100, 100);
   font-size: 12px;
   border-radius: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 /* .checkbox-label:hover, .checkbox-label:active */
 .checkbox-label:hover,
@@ -29,8 +31,7 @@ body {
   color: white;
 }
 /*.checkbox:checked + .primaryPlaylist-list {*/
-.checkbox-label:checked + .primaryPlaylist-list,
-.radio-label:checked + .primaryPlaylist-list {
+.checkbox:checked + .primaryPlaylist-list {
   display: none;
 }
 .btn {
