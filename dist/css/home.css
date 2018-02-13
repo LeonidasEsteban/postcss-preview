@@ -59,9 +59,27 @@ body {
       grid-template-rows: 1fr 150px;
       grid-template-areas: "sidebar primary"
                        "sidebar featuring";
-  /* &-sidebar {
+  /*&-sidebar {
     grid-area: sidebar;
-  } */
+  }
+  &-primary {
+    grid-area: primary;
+  }
+  &-featuring {
+    grid-area: featuring;
+  }*/
+}
+@media (max-width: 767px) {
+  .home {
+    height: auto;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: auto auto 150px;
+        grid-template-rows: auto auto 150px;
+        grid-template-areas: "primary"
+                         "sidebar"
+                         "featuring";
+  }
 }
 .home-sidebar {
   -ms-grid-row: 1;
@@ -104,6 +122,15 @@ body {
   height: 100vh;
   overflow: auto;
 }
+@media (max-width: 767px) {
+  .sidebar {
+    height: auto;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto 1fr;
+        grid-template-rows: auto 1fr;
+  }
+}
 /*Logo*/
 .logo {
   width: calc(100% - 100px);
@@ -114,6 +141,12 @@ body {
   background-position: center;
   height: 40px;
 
+}
+@media (max-width: 767px) {
+  .logo {
+    grid-column: 1 / -1;
+    width: 200px;
+  }
 }
 .logo-image {
   margin: 0;
@@ -142,7 +175,7 @@ body {
 .myPlaylist-item a {
   color: white;
   text-decoration: none;
-  font-size: .8em;
+  font-size: 1em;
   display: block;
   margin-bottom: 7px;
 }
@@ -152,6 +185,12 @@ body {
 .myPlaylist-item a:hover {
   text-decoration: underline;
 }
+.myPlaylist .myPlaylist-item {
+  border: 5px dashed blue;
+}
+/*.myPlaylist-item a:hover {
+  text-decoration: underline;
+}*/
 /*playlistFriends*/
 .playlistFriends {
   padding: 0;
@@ -299,6 +338,15 @@ body {
   padding-left: 100px;
   color: white;
 }
+@media (max-width: 767px) {
+  .featuring {
+    position: fixed;
+    bottom: 0;
+    height: 150px;
+    left: 0;
+    right: 0;
+  }
+}
 .featuring-image {
   margin-right: 20px;
 }
@@ -312,55 +360,17 @@ body {
 /*@custom-media --small (min-width: 480px);*/
 /*@custom-media --medium (min-width: 768px);*/
 /*@custom-media --large (min-width: 1024px);*/
-/*@media (--small) {*/
-@media screen and (max-width: 768px) {
-/*@media screen and (max-width : 768px) {*/
-  body {
-    border: 10px solid blue;
-  }
-  .home {
-    height: auto;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: auto auto 150px;
-        grid-template-rows: auto auto 150px;
-        grid-template-areas: "primary"
-                         "sidebar"
-                         "featuring";
-  }
-  .featuring {
-    position: fixed;
-    bottom: 0;
-    height: 150px;
-    left: 0;
-    right: 0;
-  }
-  .sidebar {
-    height: auto;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    -ms-grid-rows: auto 1fr;
-        grid-template-rows: auto 1fr;
-  }
-  .logo {
-    grid-column: 1 / -1;
-    width: 200px;
-  }
-}
-@media (max-width: 479px) {
-  body {
-    border: 10px solid orange;
-  }
-}
 @media (-webkit-min-device-pixel-ratio: 1.0416666666666667), (min-resolution: 100dpi) {
 .logo {
-  background-image: url('../../images/platzi-video-3x.png');
+  background-image: url('../../images/platzi-video-3x.png')
 
 }
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 .logo {
-  background-image: url('../../images/platzi-video-2x.png');
+  background-image: url('../../images/platzi-video-2x.png')
 
 }
 }
+
+

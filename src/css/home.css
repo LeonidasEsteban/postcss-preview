@@ -65,9 +65,24 @@ body {
   grid-template-rows: 1fr 150px;
   grid-template-areas: "sidebar primary"
                        "sidebar featuring";
-  /* &-sidebar {
+  /*&-sidebar {
     grid-area: sidebar;
-  } */
+  }
+  &-primary {
+    grid-area: primary;
+  }
+  &-featuring {
+    grid-area: featuring;
+  }*/
+
+  @media (--small) {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 150px;
+    grid-template-areas: "primary"
+                         "sidebar"
+                         "featuring";
+  }
 }
 
 .home-sidebar {
@@ -100,6 +115,12 @@ body {
   box-sizing: border-box;
   height: calc(var(--viewportHeight) * 2);
   overflow: auto;
+
+  @media (--small) {
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
 }
 
 /*Logo*/
@@ -114,6 +135,10 @@ body {
   background-size: contain;
   background-position: center;
   height: 40px;
+  @media (--small) {
+    grid-column: 1 / -1;
+    width: 200px;
+  }
 
 }
 .logo-image {
@@ -145,21 +170,28 @@ body {
   background: color(blue l(80%));
 }
 
-.myPlaylist-item a {
-  color: var(--lightColor);
-  text-decoration: none;
-  font-size: .8em;
-  display: block;
-  margin-bottom: 7px;
-}
-.myPlaylist-item:last-child a {
-  margin-bottom: 0;
+.myPlaylist-item {
+  & a {
+    color: var(--lightColor);
+    text-decoration: none;
+    font-size: 1em;
+    display: block;
+    margin-bottom: 7px;
+  }
+  &:last-child a {
+    margin-bottom: 0;
+  }
+  & a:hover {
+    text-decoration: underline;
+  }
+  @nest .myPlaylist & {
+    border: 5px dashed blue;
+  }
 }
 
-
-.myPlaylist-item a:hover {
+/*.myPlaylist-item a:hover {
   text-decoration: underline;
-}
+}*/
 
 /*playlistFriends*/
 
@@ -296,6 +328,13 @@ body {
   align-items: center;
   padding-left: 100px;
   color: var(--lightColor);
+  @media (--small) {
+    position: fixed;
+    bottom: 0;
+    height: 150px;
+    left: 0;
+    right: 0;
+  }
 }
 
 .featuring-image {
@@ -319,40 +358,3 @@ body {
 @custom-media --large (width >= 1024px);
 
 
-/*@media (--small) {*/
-@media screen and (width <= 768px) {
-/*@media screen and (max-width : 768px) {*/
-  body {
-    border: 10px solid blue;
-  }
-  .home {
-    height: auto;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto 150px;
-    grid-template-areas: "primary"
-                         "sidebar"
-                         "featuring";
-  }
-  .featuring {
-    position: fixed;
-    bottom: 0;
-    height: 150px;
-    left: 0;
-    right: 0;
-  }
-  .sidebar {
-    height: auto;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;
-  }
-  .logo {
-    grid-column: 1 / -1;
-    width: 200px;
-  }
-}
-
-@media (--extra-small) {
-  body {
-    border: 10px solid orange;
-  }
-}
